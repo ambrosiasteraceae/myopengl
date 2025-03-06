@@ -1,4 +1,4 @@
-const char *vertexShaderSource = "#version 330 core\n"
+const char* vertexShaderSource = "#version 330 core\n"
 "layout (location = 0) in vec3 aPos;\n"
 "void main()\n"
 "{\n"
@@ -28,7 +28,7 @@ void processInput(GLFWwindow* window)
 {
 	if (glfwGetKey(window, GLFW_KEY_ESCAPE) == GLFW_PRESS)\
 		glfwSetWindowShouldClose(window, true);
-		
+
 }
 
 
@@ -39,7 +39,7 @@ int main()
 	glfwWindowHint(GLFW_CONTEXT_VERSION_MAJOR, 3);
 	glfwWindowHint(GLFW_CONTEXT_VERSION_MINOR, 3);
 	glfwWindowHint(GLFW_OPENGL_PROFILE, GLFW_OPENGL_CORE_PROFILE);
-	
+
 	/*std::cout << "Hello World C++";
 	return 0;*/
 
@@ -52,7 +52,7 @@ int main()
 	}
 
 	glfwMakeContextCurrent(window);
-	
+
 	if (!gladLoadGLLoader((GLADloadproc)glfwGetProcAddress))
 	{
 		std::cout << "Failed to initialize GLAD" << std::endl;
@@ -115,11 +115,19 @@ int main()
 		glGetProgramInfoLog(shaderProgram, 512, NULL, infoLog);
 	}
 
-	//Define coords
+
 	float vertices[] = {
-   -0.5f, -0.5f, 0.0f,
-	0.5f, -0.5f, 0.0f,
-	0.0,   0.5f, 0.0f
+	0.5f, 0.5f, 0.0f, // top right
+	0.5f, -0.5f, 0.0f, // bottom right
+	-0.5f, -0.5f, 0.0f, // bottom left
+	-0.5f, 0.5f, 0.0f, // top left
+	0.7f, 0.7f ,0.0f
+	};
+
+	unsigned int indices[] = {
+		0,1,3, // first tirangkle
+		1,2,3, // second triangle
+		0,3,4
 	};
 
 	//Process Vertex Buffer Object & verteex array object
@@ -139,8 +147,14 @@ int main()
 	glBindBuffer(GL_ARRAY_BUFFER, 0);
 	glBindVertexArray(0);
 
-	/*glBindBuffer(GL_ARRAY_BUFFER, VBO);
-	glBufferData(GL_ARRAY_BUFFER, sizeof(vertices), vertices, GL_STATIC_DRAW);*/
+
+	unsigned int EBO;
+	glGenBuffers(1, &EBO);
+	glBindBuffer(GL_ELEMENT_ARRAY_BUFFER, EBO);
+	glBufferData(GL_ELEMENT_ARRAY_BUFFER, sizeof(indices), indices, GL_STATIC_DRAW);
+	
+	//Rendering Mode -> Uncomment for wireframe
+	//glPolygonMode(GL_FRONT_AND_BACK, GL_LINE);
 
 	while (!glfwWindowShouldClose(window))
 	{
@@ -151,7 +165,8 @@ int main()
 
 		glUseProgram(shaderProgram);
 		glBindVertexArray(VAO);
-		glDrawArrays(GL_TRIANGLES, 0, 3);
+		glBindBuffer(GL_ELEMENT_ARRAY_BUFFER, EBO);
+		glDrawElements(GL_LINE_LOOP, 9, GL_UNSIGNED_INT,0);
 
 		glfwSwapBuffers(window);
 		glfwPollEvents();
@@ -169,5 +184,5 @@ int main()
 
 	glfwTerminate();
 	return 0;
-		
+
 }

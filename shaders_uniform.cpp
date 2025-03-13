@@ -1,15 +1,17 @@
 const char* vertexShaderSource = "#version 330 core\n"
 "layout (location = 0) in vec3 aPos;\n"
+"out vec4 vertexColor;\n"
 "void main()\n"
 "{\n"
-"gl_Position = vec4(aPos.x, aPos.y, aPos.z, 1.0);\n"
+"gl_Position = vec4(aPos, 1.0);\n"
 "}\0";
 
 const char* fragmentShaderSource = "#version 330 core\n"
 "out vec4 FragColor;\n"
+"uniform vec4 ourColor;\n"
 "void main()\n"
 "{\n"
-"FragColor = vec4(1.0f, 0.5f, 0.2f, 1.0f);\n"
+"FragColor = ourColor;\n"
 "}\0";
 
 
@@ -117,18 +119,19 @@ int main()
 
 
 	float vertices[] = {
-	0.5f, 0.5f, 0.0f, // top right
-	0.5f, -0.5f, 0.0f, // bottom right
-	-0.5f, -0.5f, 0.0f, // bottom left
-	-0.5f, 0.5f, 0.0f, // top left
-	0.7f, 0.7f ,0.0f
+   -0.5f, -0.5f, 0.0f, 
+	0.5f, -0.5f, 0.0f,
+	0.0f,   0.5f, 0.0f,
+
+
 	};
 
 	unsigned int indices[] = {
-		0,1,3, // first tirangkle
-		1,2,3, // second triangle
-		//0,3,4
+		0,1,2, // first tirangkle
+
 	};
+
+
 
 	//Process Vertex Buffer Object & verteex array object
 	unsigned int VBO;
@@ -148,13 +151,7 @@ int main()
 	glBindVertexArray(0);
 
 
-	unsigned int EBO;
-	glGenBuffers(1, &EBO);
-	glBindBuffer(GL_ELEMENT_ARRAY_BUFFER, EBO);
-	glBufferData(GL_ELEMENT_ARRAY_BUFFER, sizeof(indices), indices, GL_STATIC_DRAW);
-	
-	//Rendering Mode -> Uncomment for wireframe
-	//glPolygonMode(GL_FRONT_AND_BACK, GL_LINE);
+	glPolygonMode(GL_FRONT_AND_BACK, GL_FILL);
 
 	while (!glfwWindowShouldClose(window))
 	{
@@ -162,11 +159,18 @@ int main()
 
 		glClearColor(0.2f, 0.3f, 0.3f, 1.0f);
 		glClear(GL_COLOR_BUFFER_BIT);
-
+		float timeValue = glfwGetTime();
+		float greenValue = (sin(timeValue) / 10.0f) + 0.1f;
+		std::cout << greenValue;
+		int vertexColorLocation = glGetUniformLocation(shaderProgram, "ourColor");
 		glUseProgram(shaderProgram);
+		glUniform4f(vertexColorLocation, greenValue, 0.0,1-greenValue, 1.0f);
+
+
 		glBindVertexArray(VAO);
-		glBindBuffer(GL_ELEMENT_ARRAY_BUFFER, EBO);
-		glDrawElements(GL_LINE_LOOP, 9, GL_UNSIGNED_INT,0);
+
+		glDrawArrays(GL_TRIANGLES, 0, 3);
+
 
 		glfwSwapBuffers(window);
 		glfwPollEvents();

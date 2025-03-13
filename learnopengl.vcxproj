@@ -133,7 +133,13 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="4.2.textures.cpp" />
+    <ClCompile Include="4.2.textures.cpp">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="coordinate_system.cpp">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="coordinate_system_3ds.cpp" />
     <ClCompile Include="hello_triangle.cpp">
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</ExcludedFromBuild>
     </ClCompile>
@@ -173,13 +179,12 @@
   <ItemGroup>
     <None Include="4.2.texture.f" />
     <None Include="4.2.texture.v" />
+    <None Include="coord.frag" />
+    <None Include="coord.vertex" />
     <None Include="shader.frag" />
     <None Include="shader.vertex" />
     <None Include="texture.frag" />
     <None Include="texture.vertex" />
-  </ItemGroup>
-  <ItemGroup>
-    <ClInclude Include="..\..\..\..\..\workrelated\opengl_libraries\include\learnnopengl\shader_s.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

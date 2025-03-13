@@ -1,5 +1,3 @@
-
-
 #include <iostream>
 #include <glad/glad.h>
 #include <GLFW/glfw3.h>
@@ -90,7 +88,7 @@ int main()
 	//color attribute
 	glVertexAttribPointer(1, 3, GL_FLOAT, GL_FALSE, 8 * sizeof(float), (void*)(3*sizeof(float)));
 	glEnableVertexAttribArray(1);
-
+	
 	//texture coord attribute
 	glVertexAttribPointer(2, 3, GL_FLOAT, GL_FALSE, 8 * sizeof(float), (void*)(void*)(6 * sizeof(float)));
 	glEnableVertexAttribArray(2);

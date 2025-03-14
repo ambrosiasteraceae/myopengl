@@ -69,7 +69,19 @@
     <ClCompile Include="coordinate_system.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="coordinate_system_3ds.cpp">
+    <ClCompile Include="coodirnate_system_exercises.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="coordinate_depth_3ds.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="camera.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="camera\camera_controls.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="camera\camera_pitch&amp;yaw.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>

@@ -22,93 +22,190 @@
     <Filter Include="Source Files\lib">
       <UniqueIdentifier>{ce9fcaab-6a77-4a75-8aa6-ef816781f25e}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Source Files\chapter2">
+      <UniqueIdentifier>{ce79b448-0e37-4c15-87c5-44f5a4122ad8}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\chapter2\basiclighting">
+      <UniqueIdentifier>{d51d4611-6a80-446a-99b5-e2fa56251333}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\chapter1">
+      <UniqueIdentifier>{aeac1a3d-afb6-4dd3-9388-922afc94923a}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\chapter2\diffuse">
+      <UniqueIdentifier>{5f0c827b-ec9e-4ca7-8d79-c9a02e2c0751}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\chapter2\specular">
+      <UniqueIdentifier>{0dcf2000-93b8-4b38-84da-dac05dba5fa4}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\chapter2\specular_view_space">
+      <UniqueIdentifier>{89a8e7c7-bc57-49eb-9621-905fda20e902}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\chapter2\specular_gouraud">
+      <UniqueIdentifier>{b06aa046-66d6-4b3b-bc1c-75bad7be7f75}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="hello_triangle.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="hello_triangle_indexed.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="multiplevertexobj.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="hello_triangle_exercise1.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="hello_triangle_exercise2.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="hello_triangle_exercise3.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="shaders_initial.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="shaders_uniform.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="shaders_attributes.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="testshader.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
     <ClCompile Include="lib\glad.c">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="textures.cpp">
-      <Filter>Source Files</Filter>
+    <ClCompile Include="basic_lighting.cpp">
+      <Filter>Source Files\chapter2\basiclighting</Filter>
     </ClCompile>
-    <ClCompile Include="stb_image.cpp">
-      <Filter>Source Files</Filter>
+    <ClCompile Include="basic\4.2.textures.cpp">
+      <Filter>Source Files\chapter1</Filter>
     </ClCompile>
-    <ClCompile Include="4.2.textures.cpp">
-      <Filter>Source Files</Filter>
+    <ClCompile Include="basic\camera.cpp">
+      <Filter>Source Files\chapter1</Filter>
     </ClCompile>
-    <ClCompile Include="coordinate_system.cpp">
-      <Filter>Source Files</Filter>
+    <ClCompile Include="basic\camera\camera_class.cpp">
+      <Filter>Source Files\chapter1</Filter>
     </ClCompile>
-    <ClCompile Include="coodirnate_system_exercises.cpp">
-      <Filter>Source Files</Filter>
+    <ClCompile Include="basic\camera\camera_controls.cpp">
+      <Filter>Source Files\chapter1</Filter>
     </ClCompile>
-    <ClCompile Include="coordinate_depth_3ds.cpp">
-      <Filter>Source Files</Filter>
+    <ClCompile Include="basic\camera\camera_pitch&amp;yaw.cpp">
+      <Filter>Source Files\chapter1</Filter>
     </ClCompile>
-    <ClCompile Include="camera.cpp">
-      <Filter>Source Files</Filter>
+    <ClCompile Include="lighting\1.colors\colors.cpp">
+      <Filter>Source Files\chapter1</Filter>
     </ClCompile>
-    <ClCompile Include="camera\camera_controls.cpp">
-      <Filter>Source Files</Filter>
+    <ClCompile Include="basic\coodirnate_system_exercises.cpp">
+      <Filter>Source Files\chapter1</Filter>
     </ClCompile>
-    <ClCompile Include="camera\camera_pitch&amp;yaw.cpp">
-      <Filter>Source Files</Filter>
+    <ClCompile Include="basic\coordinate_depth_3ds.cpp">
+      <Filter>Source Files\chapter1</Filter>
+    </ClCompile>
+    <ClCompile Include="basic\coordinate_system.cpp">
+      <Filter>Source Files\chapter1</Filter>
+    </ClCompile>
+    <ClCompile Include="basic\camera\exercise.cpp">
+      <Filter>Source Files\chapter1</Filter>
+    </ClCompile>
+    <ClCompile Include="basic\hello_triangle.cpp">
+      <Filter>Source Files\chapter1</Filter>
+    </ClCompile>
+    <ClCompile Include="basic\hello_triangle_exercise1.cpp">
+      <Filter>Source Files\chapter1</Filter>
+    </ClCompile>
+    <ClCompile Include="basic\hello_triangle_exercise2.cpp">
+      <Filter>Source Files\chapter1</Filter>
+    </ClCompile>
+    <ClCompile Include="basic\hello_triangle_exercise3.cpp">
+      <Filter>Source Files\chapter1</Filter>
+    </ClCompile>
+    <ClCompile Include="basic\hello_triangle_indexed.cpp">
+      <Filter>Source Files\chapter1</Filter>
+    </ClCompile>
+    <ClCompile Include="basic\multiplevertexobj.cpp">
+      <Filter>Source Files\chapter1</Filter>
+    </ClCompile>
+    <ClCompile Include="basic\shaders_attributes.cpp">
+      <Filter>Source Files\chapter1</Filter>
+    </ClCompile>
+    <ClCompile Include="basic\shaders_initial.cpp">
+      <Filter>Source Files\chapter1</Filter>
+    </ClCompile>
+    <ClCompile Include="basic\shaders_uniform.cpp">
+      <Filter>Source Files\chapter1</Filter>
+    </ClCompile>
+    <ClCompile Include="basic\stb_image.cpp">
+      <Filter>Source Files\chapter1</Filter>
+    </ClCompile>
+    <ClCompile Include="basic\testshader.cpp">
+      <Filter>Source Files\chapter1</Filter>
+    </ClCompile>
+    <ClCompile Include="basic\textures.cpp">
+      <Filter>Source Files\chapter1</Filter>
+    </ClCompile>
+    <ClCompile Include="diffuse_lighting.cpp">
+      <Filter>Source Files\chapter2\diffuse</Filter>
+    </ClCompile>
+    <ClCompile Include="chapter-2\specular.cpp">
+      <Filter>Source Files\chapter2\specular</Filter>
+    </ClCompile>
+    <ClCompile Include="chapter-2\specular_gouraud.cpp">
+      <Filter>Source Files\chapter2\specular_gouraud</Filter>
+    </ClCompile>
+    <ClCompile Include="chapter-2\specular_gouraud.vsh">
+      <Filter>Source Files\chapter2\specular_gouraud</Filter>
+    </ClCompile>
+    <ClCompile Include="chapter-2\specular_gouraud.fsh">
+      <Filter>Source Files\chapter2\specular_gouraud</Filter>
+    </ClCompile>
+    <ClCompile Include="chapter-2\specular_view_space.cpp">
+      <Filter>Source Files\chapter2\specular_view_space</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <None Include="shader.vertex">
+    <None Include="basic\shader.vertex">
       <Filter>Source Files\shaders</Filter>
     </None>
-    <None Include="shader.frag">
+    <None Include="basic\shader.frag">
       <Filter>Source Files\shaders</Filter>
     </None>
-    <None Include="texture.frag">
+    <None Include="basic\texture.frag">
       <Filter>Source Files\shaders</Filter>
     </None>
-    <None Include="texture.vertex">
+    <None Include="basic\texture.vertex">
       <Filter>Source Files\shaders</Filter>
     </None>
-    <None Include="4.2.texture.f">
+    <None Include="basic\4.2.texture.f">
       <Filter>Source Files\shaders</Filter>
     </None>
-    <None Include="4.2.texture.v">
+    <None Include="basic\4.2.texture.v">
       <Filter>Source Files\shaders</Filter>
     </None>
-    <None Include="coord.vertex">
+    <None Include="basic\camera\coord.vertex">
       <Filter>Source Files\shaders</Filter>
     </None>
-    <None Include="coord.frag">
+    <None Include="basic\camera\coord.frag">
       <Filter>Source Files\shaders</Filter>
     </None>
+    <None Include="basic_lighting.fsh">
+      <Filter>Source Files\chapter2\basiclighting</Filter>
+    </None>
+    <None Include="light_cube.fsh">
+      <Filter>Source Files\chapter2\basiclighting</Filter>
+    </None>
+    <None Include="diffuse.fsh">
+      <Filter>Source Files\chapter2\diffuse</Filter>
+    </None>
+    <None Include="specular.fsh">
+      <Filter>Source Files\chapter2\specular</Filter>
+    </None>
+    <None Include="light_source.fsh">
+      <Filter>Source Files\chapter2\specular</Filter>
+    </None>
+    <None Include="specular_view.fsh">
+      <Filter>Source Files\chapter2\specular_view_space</Filter>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="include\shader.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="include\camera.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <FxCompile Include="basic_lighting.vsh">
+      <Filter>Source Files\chapter2\basiclighting</Filter>
+    </FxCompile>
+    <FxCompile Include="light_cube.vsh">
+      <Filter>Source Files\chapter2\basiclighting</Filter>
+    </FxCompile>
+    <FxCompile Include="diffuse.vsh">
+      <Filter>Source Files\chapter2\diffuse</Filter>
+    </FxCompile>
+    <FxCompile Include="specular.vsh">
+      <Filter>Source Files\chapter2\specular</Filter>
+    </FxCompile>
+    <FxCompile Include="light_source.vsh">
+      <Filter>Source Files\chapter2\specular</Filter>
+    </FxCompile>
+    <FxCompile Include="specular_view.vsh">
+      <Filter>Source Files\chapter2\specular_view_space</Filter>
+    </FxCompile>
   </ItemGroup>
 </Project>

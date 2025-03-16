@@ -43,6 +43,12 @@
     <Filter Include="Source Files\chapter2\specular_gouraud">
       <UniqueIdentifier>{b06aa046-66d6-4b3b-bc1c-75bad7be7f75}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Source Files\chapter2\materials">
+      <UniqueIdentifier>{463dc031-05d2-48bf-b4f3-9d55c8055be1}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\chapter2\diffuse_maps">
+      <UniqueIdentifier>{42ea7afc-a9e3-40b4-b9a7-df88266ba551}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="lib\glad.c">
@@ -135,6 +141,12 @@
     <ClCompile Include="chapter-2\specular_view_space.cpp">
       <Filter>Source Files\chapter2\specular_view_space</Filter>
     </ClCompile>
+    <ClCompile Include="material.cpp">
+      <Filter>Source Files\chapter2\materials</Filter>
+    </ClCompile>
+    <ClCompile Include="diffuse_maps.cpp">
+      <Filter>Source Files\chapter2\diffuse_maps</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <None Include="basic\shader.vertex">
@@ -173,11 +185,20 @@
     <None Include="specular.fsh">
       <Filter>Source Files\chapter2\specular</Filter>
     </None>
-    <None Include="light_source.fsh">
-      <Filter>Source Files\chapter2\specular</Filter>
-    </None>
     <None Include="specular_view.fsh">
       <Filter>Source Files\chapter2\specular_view_space</Filter>
+    </None>
+    <None Include="material.fsh">
+      <Filter>Source Files\chapter2\materials</Filter>
+    </None>
+    <None Include="light_cube_m.fsh">
+      <Filter>Source Files\chapter2\materials</Filter>
+    </None>
+    <None Include="diffuse_maps.fsh">
+      <Filter>Source Files\chapter2\diffuse_maps</Filter>
+    </None>
+    <None Include="diffuse_maps_ex2.fsh">
+      <Filter>Source Files\chapter2\diffuse_maps</Filter>
     </None>
   </ItemGroup>
   <ItemGroup>
@@ -201,11 +222,11 @@
     <FxCompile Include="specular.vsh">
       <Filter>Source Files\chapter2\specular</Filter>
     </FxCompile>
-    <FxCompile Include="light_source.vsh">
-      <Filter>Source Files\chapter2\specular</Filter>
-    </FxCompile>
     <FxCompile Include="specular_view.vsh">
       <Filter>Source Files\chapter2\specular_view_space</Filter>
+    </FxCompile>
+    <FxCompile Include="diffuse_maps.vsh">
+      <Filter>Source Files\chapter2\diffuse_maps</Filter>
     </FxCompile>
   </ItemGroup>
 </Project>

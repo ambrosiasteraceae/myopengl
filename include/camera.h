@@ -64,7 +64,7 @@ public:
     // returns the view matrix calculated using Euler Angles and the LookAt Matrix
     glm::mat4 GetViewMatrix()
     {
-        glm::vec3 cameraTarget = glm::vec3(0.0f, 0.0f, 0.0f);
+   /*     glm::vec3 cameraTarget = glm::vec3(0.0f, 0.0f, 0.0f);
         glm::vec3 Dir = glm::normalize(Position - cameraTarget);
         
 
@@ -80,12 +80,9 @@ public:
             0, 0, 1, 0,
             -Position.x, -Position.y, -Position.z, 1);
 
-        return  look * translate;
-
-  
-
+        return  look * translate;*/
         //return   glm::transpose(lookAt) * translate;
-        //return glm::lookAt(Position, Position + Front, Up);
+        return glm::lookAt(Position, Position + Front, Up);
         
     
     }

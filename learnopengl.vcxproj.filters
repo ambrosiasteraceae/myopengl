@@ -49,6 +49,9 @@
     <Filter Include="Source Files\chapter2\diffuse_maps">
       <UniqueIdentifier>{42ea7afc-a9e3-40b4-b9a7-df88266ba551}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Source Files\playground">
+      <UniqueIdentifier>{78296d0e-db42-4a47-a750-dd36ff0d683f}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="lib\glad.c">
@@ -147,6 +150,9 @@
     <ClCompile Include="diffuse_maps.cpp">
       <Filter>Source Files\chapter2\diffuse_maps</Filter>
     </ClCompile>
+    <ClCompile Include="playground.cpp">
+      <Filter>Source Files\playground</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <None Include="basic\shader.vertex">
@@ -200,6 +206,9 @@
     <None Include="diffuse_maps_ex2.fsh">
       <Filter>Source Files\chapter2\diffuse_maps</Filter>
     </None>
+    <None Include="playground.fsh">
+      <Filter>Source Files\playground</Filter>
+    </None>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="include\shader.h">
@@ -227,6 +236,9 @@
     </FxCompile>
     <FxCompile Include="diffuse_maps.vsh">
       <Filter>Source Files\chapter2\diffuse_maps</Filter>
+    </FxCompile>
+    <FxCompile Include="playground.vsh">
+      <Filter>Source Files\playground</Filter>
     </FxCompile>
   </ItemGroup>
 </Project>

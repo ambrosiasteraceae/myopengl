@@ -187,49 +187,51 @@ int main()
         // render the cube
        /* glBindVertexArray(VAO);
         glDrawArrays(GL_TRIANGLES, 0, 36);*/
-        for (int l = 0; l < 25; l += 1)
-        {
+        int length = 10;
+        int height = 25;
+        int depth = 7;
+        glBindBuffer(GL_ELEMENT_ARRAY_BUFFER, EBO);
+        float res = 55 / 256;
+        float mres = (256 - 55) / 256;
 
-            for (int i = 0; i < 4; i += 1)
-                for (int j = 0; j < 4; j += 1)
-                    for (int k = 0; k < 4; k += 1)
+        for (int i = 1; i < length; i += 1)
+            for (int j = 1; j < height; j += 1)
+            {
+                for (int k = 1; k < depth; k += 1)
+                {
+                    
+
+
+                    float coli = (res + (1-mres) / (float)i);
+                    float colj = (res + (1-mres) / (float)j);
+
+                   // float colk = (0.97 - ((float)(k) / depth));
+
+                    glm::vec3 cols = glm::vec3(coli * 0.79, colj*0.89, 0.89);
+                    glm::mat4 model = glm::mat4(1.0f);
+                    glm::vec3 trans = glm::vec3(1.0f);
+                    if (j == 1 || j == height-1 || i == 1 || i == length - 1)
                     {
-                        {
+                        //std::cout << "Here I am" << std::endl;
+                        glm::vec3 trans = glm::vec3(i,j,k);
+                        model = glm::translate(model, trans);
+                        //model = glm::rotate(model, x, glm::vec3(0.0f, 1.0f, 0.0f));
+                        model = glm::translate(model, glm::vec3(0.0f, 0.0f, radius * x*5));
+                        //std::cout << coli << ", " << colj << std::endl;
 
 
-                            float coli = (1.0 - ((float)i / 10));
-                            float colj = (1.0 - ((float)j / 10));
-                            float colk = (1.0 - ((float)k / 10));
-
-                            glm::vec3 cols = glm::vec3(coli - colj + colk, colj, colk);
-
-                            glm::mat4 model = glm::mat4(3.0f);
-                            glm::vec3 trans = glm::vec3(i+(x*radius*l), j*l, k+(y*radius*l));
-
-                            model = glm::translate(model, trans);
-
-                            //model = glm::rotate(model, x, glm::vec3(0, 1, 0));
-
-
-                            glm::vec3 result = glm::vec3((radius-i-j-k) * x, (radius - i - j - k) * x, (radius-i-j-k) * y);
-                            model = glm::translate(model, result);
-
-
-                            lightingShader.setMat4("model", model);
-                            lightingShader.setVec3("rgbCols", cols);
-
-                            glBindBuffer(GL_ELEMENT_ARRAY_BUFFER, EBO);
-                            glDrawElements(GL_TRIANGLES, 36, GL_UNSIGNED_INT, 0);
-
-                        }
                     }
-
-        }
-
-
-
+                    
+                    lightingShader.setMat4("model", model);
+                    lightingShader.setVec3("rgbCols", cols);
 
 
+                    
+                    glDrawElements(GL_TRIANGLES, 36, GL_UNSIGNED_INT, 0);
+
+              
+                }
+            }
         // glfw: swap buffers and poll IO events (keys pressed/released, mouse moved etc.)
         // -------------------------------------------------------------------------------
         glfwSwapBuffers(window);

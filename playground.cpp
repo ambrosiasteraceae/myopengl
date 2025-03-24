@@ -181,36 +181,50 @@ int main()
          
         float x = sin(time);
         float y = cos(time);
-        std::cout<<time<<std::endl;
+        float radius = 3.0f;
+
+        
         // render the cube
        /* glBindVertexArray(VAO);
         glDrawArrays(GL_TRIANGLES, 0, 36);*/
-        for (int i = 0; i < 3; i+=1)
-            for (int j = 0; j<3; j+=1)
-                for (int k = 0; k < 3; k += 1)
-                {
+        for (int l = 0; l < 25; l += 1)
+        {
+
+            for (int i = 0; i < 4; i += 1)
+                for (int j = 0; j < 4; j += 1)
+                    for (int k = 0; k < 4; k += 1)
                     {
-                        glm::mat4 model = glm::mat4(3.0f);
-                        glm::vec3 trans = glm::vec3(i, j, k);
-                        model = glm::translate(model, trans);
-                        //model = glm::rotate(model, x, glm::vec3(i+j,-j+k, k+i+j));
-                        
-                        float coli = (1.0 - ((float)i / 10));
-                        float colj = (1.0 - ((float)j / 10));
-                        float colk = (1.0 - ((float)k/ 10));
-                        glm::vec3 cols = glm::vec3(coli - colj+colk, colj, colk);
-                        //float angle = i * 20;
-                        
-                        lightingShader.setMat4("model", model);
-                        lightingShader.setVec3("rgbCols", cols);
+                        {
 
-                        glBindBuffer(GL_ELEMENT_ARRAY_BUFFER, EBO);
-                        glDrawElements(GL_TRIANGLES, 36, GL_UNSIGNED_INT, 0);
 
+                            float coli = (1.0 - ((float)i / 10));
+                            float colj = (1.0 - ((float)j / 10));
+                            float colk = (1.0 - ((float)k / 10));
+
+                            glm::vec3 cols = glm::vec3(coli - colj + colk, colj, colk);
+
+                            glm::mat4 model = glm::mat4(3.0f);
+                            glm::vec3 trans = glm::vec3(i+(x*radius*l), j*l, k+(y*radius*l));
+
+                            model = glm::translate(model, trans);
+
+                            //model = glm::rotate(model, x, glm::vec3(0, 1, 0));
+
+
+                            glm::vec3 result = glm::vec3((radius-i-j-k) * x, (radius - i - j - k) * x, (radius-i-j-k) * y);
+                            model = glm::translate(model, result);
+
+
+                            lightingShader.setMat4("model", model);
+                            lightingShader.setVec3("rgbCols", cols);
+
+                            glBindBuffer(GL_ELEMENT_ARRAY_BUFFER, EBO);
+                            glDrawElements(GL_TRIANGLES, 36, GL_UNSIGNED_INT, 0);
+
+                        }
                     }
-                }
 
-
+        }
 
 
 

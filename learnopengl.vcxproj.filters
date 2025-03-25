@@ -52,6 +52,9 @@
     <Filter Include="Source Files\playground">
       <UniqueIdentifier>{78296d0e-db42-4a47-a750-dd36ff0d683f}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Source Files\chapter2\lightcasting">
+      <UniqueIdentifier>{cb8a3b0e-cbb4-40d5-a1c9-ae3d3d13fe7a}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="lib\glad.c">
@@ -153,6 +156,9 @@
     <ClCompile Include="playground.cpp">
       <Filter>Source Files\playground</Filter>
     </ClCompile>
+    <ClCompile Include="lights_revised.cpp">
+      <Filter>Source Files\playground</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <None Include="basic\shader.vertex">
@@ -209,6 +215,12 @@
     <None Include="playground.fsh">
       <Filter>Source Files\playground</Filter>
     </None>
+    <None Include="lights.fsh">
+      <Filter>Source Files\playground</Filter>
+    </None>
+    <None Include="lights_source.fsh">
+      <Filter>Source Files\playground</Filter>
+    </None>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="include\shader.h">
@@ -238,6 +250,12 @@
       <Filter>Source Files\chapter2\diffuse_maps</Filter>
     </FxCompile>
     <FxCompile Include="playground.vsh">
+      <Filter>Source Files\playground</Filter>
+    </FxCompile>
+    <FxCompile Include="lights.vsh">
+      <Filter>Source Files\playground</Filter>
+    </FxCompile>
+    <FxCompile Include="lights_source.vsh">
       <Filter>Source Files\playground</Filter>
     </FxCompile>
   </ItemGroup>

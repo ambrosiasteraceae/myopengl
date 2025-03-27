@@ -72,8 +72,8 @@
   </ImportGroup>
   <PropertyGroup Label="UserMacros" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
-    <IncludePath>D:\learn\opengl\dependencies\includes;C:\Users\dragos\source\repos\myopengl\include;$(IncludePath)</IncludePath>
-    <LibraryPath>D:\learn\opengl\dependencies\libraries;C:\Users\dragos\source\repos\myopengl\lib;$(LibraryPath)</LibraryPath>
+    <IncludePath>D:\learn\myopengl\include;$(IncludePath)</IncludePath>
+    <LibraryPath>C:\Users\dragos\source\repos\myopengl\lib;D:\learn\myopengl\lib;$(LibraryPath)</LibraryPath>
   </PropertyGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <ClCompile>
